@@ -6,9 +6,13 @@ import sys
 ip = "localhost"
 port = 5000
 
-#Connect to INET socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-sock.connect((ip, port))
+
+#Connect to INET socket
+def Connect():	
+	sock.connect((ip, port))
+
+Connect()
 
 class ClassRoomBroadcast(sublime_plugin.EventListener):
 	def on_modified_async(this, view):
